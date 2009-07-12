@@ -16,6 +16,8 @@ module Appsta
       client.create(name, {})
       # Add the git remote for the app
       git(:remote => "add #{environment} git@heroku.com:#{name}.git")
+      # Push the code up to Heroku for the initial deploy
+      git(:push => "#{environment} master")
     end
   end
 end

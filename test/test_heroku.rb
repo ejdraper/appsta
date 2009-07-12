@@ -10,6 +10,7 @@ class TestHeroku < Test::Unit::TestCase
       client = setup_base_mocks
       client.expects(:create).with("appsta", {})
       RunHeroku.any_instance.expects(:git).with(:remote => "add production git@heroku.com:appsta.git")
+      RunHeroku.any_instance.expects(:git).with(:push => "production master")
     end
 
     should "not fail" do
@@ -22,6 +23,7 @@ class TestHeroku < Test::Unit::TestCase
       client = setup_base_mocks
       client.expects(:create).with("appsta-test", {})
       RunHeroku.any_instance.expects(:git).with(:remote => "add test git@heroku.com:appsta-test.git")
+      RunHeroku.any_instance.expects(:git).with(:push => "test master")
     end
 
     should "not fail" do

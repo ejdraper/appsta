@@ -20,6 +20,3 @@ git :commit => "-a -m 'initial commit by Appsta'"
 
 # Setup the project repo on GitHub
 github
-
-# Push the app to production, staging, and GitHub
-[:origin, :production, :staging].each { |remote| git :push => "#{remote} master" }

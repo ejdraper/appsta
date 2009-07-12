@@ -17,6 +17,8 @@ module Appsta
       raise response["error"].first["error"] if response.keys.include?("error")
       # Add the git remote for GitHub
       git(:remote => "add origin git@github.com:#{github_username}/#{name}.git")
+      # Push the code up to GitHub
+      git(:push => "origin master")
     end
   end
 end
