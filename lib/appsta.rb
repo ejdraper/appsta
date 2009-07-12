@@ -8,4 +8,11 @@ module Appsta
   include Appsta::Heroku
   include Appsta::GitHub
   include Appsta::Git
+
+  class << self
+    # This loads Appsta so that it's methods are available to the template runner
+    def load
+      Rails::TemplateRunner.send(:include, Appsta)
+    end
+  end
 end

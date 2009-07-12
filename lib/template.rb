@@ -1,6 +1,6 @@
 gem "appsta"
 require "appsta"
-self.class.instance_eval { include Appsta }
+Appsta.load
 
 # Remove certain files
 ["README", "public/index.html", "public/favicon.ico", "public/javascripts/*"].each do |path|
