@@ -23,6 +23,7 @@
     require "appsta"
     Appsta.load
 
+* For an idea of the functionality available within the template helpers, look at the default template that the Appsta command line tool uses.
 
 == REQUIREMENTS:
 
