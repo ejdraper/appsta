@@ -1,7 +1,35 @@
 #!/usr/bin/env ruby
 
+# Load what we need
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), "..", "lib"))
 require "rubygems"
 require "appsta"
 
-Kernel.system "rails -m #{File.join(File.dirname(__FILE__), "..", "lib", "template.rb")} #{ARGV[0]}"
+# Display the Appsta version
+def display_version
+  puts "Appsta (#{Appsta::VERSION})"
+end
+
+# Handle the help command, also display it when no arguments are specified
+if ARGV.empty? || ARGV[0] == "-h" || ARGV[0] == "--help"
+  display_version
+  puts " -h, --help     : display this help message"
+  puts " -v, --version  : display the Appsta version"
+  puts " appsta <name>  : create a Rails application using Appsta with the specified name"
+  puts ""
+  puts "By default, Appsta will initialize a local Git repository, setup your application"
+  puts "on Heroku with two environments (production and staging) and will also setup your"
+  puts "project repository on GitHub. It will also setup some useful gems and libraries."
+elsif ARGV[0] == "-v" || ARGV[0] == "--version"
+  # This displays the Appsta version
+  display_version
+elsif ARGV[0][0...1] == "-"
+  # This handles unknown commands
+  display_version
+  puts "Unknown command #{ARGV[0]}"
+else
+  # This actually creates the application specified
+  display_version
+  puts "Creating application #{ARGV[0]}"
+  Kernel.system "rails -m #{File.join(File.dirname(__FILE__), "..", "lib", "template.rb")} #{ARGV[0]}"
+end
