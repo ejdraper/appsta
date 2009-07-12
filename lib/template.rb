@@ -1,4 +1,3 @@
-gem "appsta"
 require "appsta"
 Appsta.load
 
