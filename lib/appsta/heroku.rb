@@ -18,6 +18,8 @@ module Appsta
       git(:remote => "add #{environment} git@heroku.com:#{name}.git")
       # Push the code up to Heroku for the initial deploy
       git(:push => "#{environment} master")
+      # Return the Heroku information for this app
+      "http://#{name}.heroku.com - git@heroku.com:#{name}.git"
     end
   end
 end

@@ -19,6 +19,8 @@ module Appsta
       git(:remote => "add origin git@github.com:#{github_username}/#{name}.git")
       # Push the code up to GitHub
       git(:push => "origin master")
+      # Return the information for the GitHub repo
+      "http://github.com/#{github_username}/#{name} - git@github.com:#{github_username}/#{name}.git"
     end
   end
 end

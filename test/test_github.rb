@@ -14,7 +14,7 @@ class TestGitHub < Test::Unit::TestCase
     end
 
     should "not fail" do
-      assert true, RunGitHub.new.github
+      assert_equal "http://github.com/github_username/appsta - git@github.com:github_username/appsta.git", RunGitHub.new.github
     end
   end
 

@@ -16,7 +16,7 @@ class TestHeroku < Test::Unit::TestCase
     should "not fail and should ask for Heroku credentials first time around" do
       RunHeroku.any_instance.expects(:ask).with("Heroku Username:").returns("heroku_username")
       RunHeroku.any_instance.expects(:ask).with("Heroku Password:").returns("heroku_password")
-      assert true, RunHeroku.new.heroku
+      assert_equal "http://appsta.heroku.com - git@heroku.com:appsta.git", RunHeroku.new.heroku
     end
   end
 
@@ -29,7 +29,7 @@ class TestHeroku < Test::Unit::TestCase
     end
 
     should "not fail and should not ask for Heroku credentials second time around" do
-      assert true, RunHeroku.new.heroku(:test)
+      assert_equal "http://appsta-test.heroku.com - git@heroku.com:appsta-test.git", RunHeroku.new.heroku(:test)
     end
   end
   
