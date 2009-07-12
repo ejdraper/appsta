@@ -17,7 +17,8 @@ gems = [
         {:name => "thoughtbot-shoulda", :lib => "shoulda", :source => "http://gems.github.com"},
         {:name => "mocha"},
         {:name => "cucumber"},
-        {:name => "hpricot"}
+        {:name => "hpricot"},
+        {:name => "authlogic"}
        ]
 heroku_gems gems
 
