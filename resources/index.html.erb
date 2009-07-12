@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title><%= name %> - created by Appsta</title>
+  </head>
+  <body>
+    <h1><%= name %> - created by Appsta</h1>
+
+    <p>
+      Your Rails application has been built by Appsta, and is now ready for development!
+    </p>
+
+    <p>
+      The application has been setup on Heroku:
+      <ul>
+      <% heroku_urls.each do |heroku_url| %>
+        <li><%= heroku_url %></li>
+      <% end %>
+      </ul>
+    </p>
+
+    <p>
+      A project repository has also been setup on GitHub:
+      <ul>
+        <li><%= github_url %></li>
+      </ul>
+    </p>
+
+    <p>
+      The following has been setup in your application:
+      <br />
+      <ul>
+        <li>jQuery</li>
+      </ul>
+    </p>
+  </body>
+</html>

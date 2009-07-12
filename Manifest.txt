@@ -9,6 +9,8 @@ lib/appsta/heroku.rb
 lib/appsta/github.rb
 lib/appsta/git.rb
 lib/template.rb
+resources/README.erb
+resources/index.html.erb
 script/console
 script/destroy
 script/generate

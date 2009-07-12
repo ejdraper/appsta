@@ -14,5 +14,15 @@ module Appsta
     def load
       Rails::TemplateRunner.send(:include, Appsta)
     end
+    
+    # This returns the template path for Appsta
+    def template_path
+      File.expand_path(File.join(File.dirname(__FILE__), "template.rb"))
+    end
+    
+    # This returns the resources path for Appsta
+    def resources_path
+      File.expand_path(File.join(File.dirname(__FILE__), "..", "resources"))
+    end
   end
 end
