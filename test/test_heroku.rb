@@ -9,7 +9,7 @@ class TestHeroku < Test::Unit::TestCase
     setup do
       client = setup_base_mocks
       client.expects(:create).with("appsta", {})
-      Kernel.expects(:system).with("git remote add production git@heroku.com:appsta.git").returns(true)
+      RunHeroku.any_instance.expects(:git).with(:remote => "add production git@heroku.com:appsta.git")
     end
 
     should "not fail" do
@@ -21,7 +21,7 @@ class TestHeroku < Test::Unit::TestCase
     setup do
       client = setup_base_mocks
       client.expects(:create).with("appsta-test", {})
-      Kernel.expects(:system).with("git remote add test git@heroku.com:appsta-test.git").returns(true)
+      RunHeroku.any_instance.expects(:git).with(:remote => "add test git@heroku.com:appsta-test.git")
     end
 
     should "not fail" do

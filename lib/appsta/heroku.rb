@@ -15,7 +15,7 @@ module Appsta
       # Create the app on Heroku
       client.create(name, {})
       # Add the git remote for the app
-      Kernel.system "git remote add #{environment} git@heroku.com:#{name}.git"
+      git(:remote => "add #{environment} git@heroku.com:#{name}.git")
     end
   end
 end

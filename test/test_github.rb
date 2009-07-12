@@ -9,7 +9,7 @@ class TestGitHub < Test::Unit::TestCase
     setup do
       post = setup_base_mocks
       post.expects(:post).with(:name => "appsta", :public => false).returns("{}")
-      Kernel.expects(:system).with("git remote add origin git@github.com:github_username/appsta.git").returns(true)
+      RunGitHub.any_instance.expects(:git).with(:remote => "add origin git@github.com:github_username/appsta.git")
     end
 
     should "not fail" do

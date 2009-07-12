@@ -16,7 +16,7 @@ module Appsta
       response = YAML::load(client.post(:name => name, :public => false))
       raise response["error"].first["error"] if response.keys.include?("error")
       # Add the git remote for GitHub
-      Kernel.system "git remote add origin git@github.com:#{github_username}/#{name}.git"
+      git(:remote => "add origin git@github.com:#{github_username}/#{name}.git")
     end
   end
 end
