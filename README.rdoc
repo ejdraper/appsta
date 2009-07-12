@@ -7,14 +7,18 @@
 
 * Appsta is designed to make bootstrapping new Rails applications much easier.
 
-== FEATURES/PROBLEMS:
+== FEATURES:
 
 * It provides a helper library for writing Rails templates, to quickly setup your projects on Heroku, GitHub, and other things to get your app up and running quickly.
+* It also provides a command line tool to quickly create applications using a default template that uses the Appsta helper library to get you up to speed nice and quickly.
 
 == SYNOPSIS:
 
-* appsta my_new_app   # this creates a new application called my_new_app
-* You can also use the Appsta helper methods in your own templates, by requiring the Appsta library and including it
+* You can create a new applicaion using the default Appsta template by running the following from the command line:
+  appsta <app_name>
+* You can also use the Appsta helper methods in your own templates, by requiring the Appsta library and loading it within the template:
+  require "appsta"
+  Appsta.load
 
 == REQUIREMENTS:
 
