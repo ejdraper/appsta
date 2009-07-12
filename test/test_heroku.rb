@@ -39,4 +39,27 @@ class TestHeroku < Test::Unit::TestCase
     Heroku::Client.expects(:new).with("heroku_username", "heroku_password").returns(client)
     client
   end
+
+  context "Setting up Heroku gems manifest" do
+    setup do
+      @gems = [{:name => "hpricot"}, {:name => "thoughtbot-shoulda", :lib => "shoulda", :source => "http://gems.github.com"}]
+      @gem_manifest =<<EOF
+hpricot
+thoughtbot-shoulda --source http://gems.github.com
+EOF
+    end
+    
+    should "create a valid gem manifest file" do
+      RunHeroku.any_instance.stubs(:gem)
+      RunHeroku.any_instance.expects(:file).with(".gems", @gem_manifest)
+      RunHeroku.new.heroku_gems(@gems)
+    end
+
+    should "handle calls to install the gems" do
+      RunHeroku.any_instance.stubs(:file)
+      RunHeroku.any_instance.expects(:gem).with("hpricot", {})
+      RunHeroku.any_instance.expects(:gem).with("thoughtbot-shoulda", {:lib => "shoulda", :source => "http://gems.github.com"})
+      RunHeroku.new.heroku_gems(@gems)
+    end
+  end
 end
