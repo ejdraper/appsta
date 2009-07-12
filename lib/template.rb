@@ -12,6 +12,18 @@ end
 # Grab jQuery for use in the app
 run "curl -s -L http://jqueryjs.googlecode.com/files/jquery-1.3.2.min.js > public/javascripts/jquery.js"
 
+# Setup the gems we want, including the creation of the Heroku gem manifest
+gems = [
+        {:name => "thoughtbot-shoulda", :lib => "shoulda", :source => "http://gems.github.com"},
+        {:name => "mocha"},
+        {:name => "cucumber"},
+        {:name => "hpricot"}
+       ]
+heroku_gems gems
+
+# Install all the gems we need
+rake "gems:install", :sudo => true
+
 # Setup the Git repo
 git_setup
 
@@ -27,6 +39,6 @@ file "README", ERB.new(File.read(File.join(Appsta.resources_path, "README.erb"))
 file "public/index.html", ERB.new(File.read(File.join(Appsta.resources_path, "index.html.erb"))).result(binding)
 
 # Update the git repo with our changes and push them
-git(:add => ".")
-git(:commit => "-a -m 'added README and public/index.html'")
+git :add => "."
+git :commit => "-a -m 'added README and public/index.html'"
 [:origin, :production, :staging].each { |remote| git(:push => "#{remote} master") }
