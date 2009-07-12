@@ -10,7 +10,7 @@ $hoe = Hoe.new('appsta', Appsta::VERSION) do |p|
   p.post_install_message = 'PostInstall.txt'
   p.rubyforge_name       = p.name
   p.extra_deps           = [
-    ['heroku']
+    ['heroku'], ['rest-client']
   ]
   p.extra_dev_deps = [
     ['newgem', ">= #{::Newgem::VERSION}"]
