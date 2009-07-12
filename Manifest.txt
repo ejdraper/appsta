@@ -7,10 +7,12 @@ bin/appsta
 lib/appsta.rb
 lib/appsta/heroku.rb
 lib/appsta/github.rb
+lib/appsta/git.rb
 lib/template.rb
 script/console
 script/destroy
 script/generate
 test/test_heroku.rb
 test/test_github.rb
+test/test_git.rb
 test/test_helper.rb
