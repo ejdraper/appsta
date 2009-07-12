@@ -15,10 +15,14 @@
 == SYNOPSIS:
 
 * You can create a new applicaion using the default Appsta template by running the following from the command line:
+
   appsta <app_name>
+
 * You can also use the Appsta helper methods in your own templates, by requiring the Appsta library and loading it within the template:
+
   require "appsta"
   Appsta.load
+
 
 == REQUIREMENTS:
 
