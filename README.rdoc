@@ -27,6 +27,7 @@
 
 == REQUIREMENTS:
 
+* rails (v2.3 and above)
 * heroku
 * rest_client
 
