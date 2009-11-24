@@ -1,7 +1,7 @@
 = appsta
 
 * http://appsta.com
-* http://github.com/edraper/appsta
+* http://github.com/ejdraper/appsta
 
 == DESCRIPTION:
 
