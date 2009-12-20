@@ -5,7 +5,7 @@ require File.join(File.dirname(__FILE__), "appsta", "git")
 require File.join(File.dirname(__FILE__), "appsta", "jquery")
 
 module Appsta
-  VERSION = "1.0.0"
+  VERSION = "1.1.0"
 
   include Appsta::DefaultFiles
   include Appsta::Heroku
