@@ -1,5 +1,5 @@
 require 'rubygems' unless ENV['NO_RUBYGEMS']
-%w[rake rake/clean fileutils newgem rubigen].each { |f| require f }
+%w[rake rake/clean fileutils newgem rubigen hoe].each { |f| require f }
 require File.dirname(__FILE__) + '/lib/appsta'
 
 # Generate all the Rake tasks
