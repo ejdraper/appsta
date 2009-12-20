@@ -14,7 +14,8 @@ $hoe = Hoe.new('appsta', Appsta::VERSION) do |p|
   ]
   p.extra_dev_deps = [
     ['newgem', ">= #{::Newgem::VERSION}"]
-  ]
+                     ]
+  p.summary = "Appsta is designed to make bootstrapping new Rails applications much easier."
   
   p.clean_globs |= %w[**/.DS_Store tmp *.log]
   path = (p.rubyforge_name == p.name) ? p.rubyforge_name : "\#{p.rubyforge_name}/\#{p.name}"
