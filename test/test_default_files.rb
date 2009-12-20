@@ -4,7 +4,7 @@ class RunDefaultFiles
   include Appsta::DefaultFiles
 end
 
-class TestGit < Test::Unit::TestCase
+class TestDefaultFiles < Test::Unit::TestCase
   context "Removing default files" do
     setup do
       RunDefaultFiles.any_instance.expects(:run).with("rm -f README")
