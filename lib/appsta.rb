@@ -2,6 +2,7 @@ require File.join(File.dirname(__FILE__), "appsta", "default_files")
 require File.join(File.dirname(__FILE__), "appsta", "heroku")
 require File.join(File.dirname(__FILE__), "appsta", "github")
 require File.join(File.dirname(__FILE__), "appsta", "git")
+require File.join(File.dirname(__FILE__), "appsta", "jquery")
 
 module Appsta
   VERSION = "1.0.0"
@@ -10,6 +11,7 @@ module Appsta
   include Appsta::Heroku
   include Appsta::GitHub
   include Appsta::Git
+  include Appsta::JQuery
 
   class << self
     # This loads Appsta so that it's methods are available to the template runner
