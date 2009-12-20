@@ -1,10 +1,12 @@
+require File.join(File.dirname(__FILE__), "appsta", "default_files")
 require File.join(File.dirname(__FILE__), "appsta", "heroku")
 require File.join(File.dirname(__FILE__), "appsta", "github")
 require File.join(File.dirname(__FILE__), "appsta", "git")
 
 module Appsta
   VERSION = "1.0.0"
-  
+
+  include Appsta::DefaultFiles
   include Appsta::Heroku
   include Appsta::GitHub
   include Appsta::Git
