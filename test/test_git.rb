@@ -28,6 +28,20 @@ class TestGit < Test::Unit::TestCase
       assert true, RunGit.new.git_setup(CUSTOM_MESSAGE)
     end
   end
+
+  context "Pushing Git" do
+    should "not fail to a single remote" do
+      RunGit.any_instance.expects(:git).with(:push => "origin master")
+      assert true, RunGit.new.git_push(:origin)
+    end
+
+    should "not fail to multiple remotes" do
+      RunGit.any_instance.expects(:git).with(:push => "origin master")
+      RunGit.any_instance.expects(:git).with(:push => "staging master")
+      RunGit.any_instance.expects(:git).with(:push => "production master")
+      assert true, RunGit.new.git_push(:origin, :staging, :production)
+    end
+  end
   
   # This sets up the mocks common to all contexts
   def setup_base_mocks

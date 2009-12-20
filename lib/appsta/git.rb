@@ -6,5 +6,12 @@ module Appsta
       git(:add => ".")
       git(:commit => "-a -m '#{message}'")
     end
+    
+    # This pushes to the remotes specified
+    def git_push(*remotes)
+      remotes.each do |remote|
+        git(:push => "#{remote} master")
+      end
+    end
   end
 end
