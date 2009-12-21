@@ -18,7 +18,7 @@
     require "appsta"
     Appsta.load
 
-* For an idea of the functionality available within the template helpers, please review the helpers defined in lib/appsta, or take a look at the forthcoming documentation.
+* For an idea of the functionality available within the template helpers, please review the helpers defined in lib/appsta, or take a look at the docs on GitHub.
 
 == REQUIREMENTS:
 
