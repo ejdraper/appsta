@@ -1,2 +1,2 @@
 
-For more information on appsta, see http://appsta.com
+For more information on appsta, see http://github.com/ejdraper/appsta

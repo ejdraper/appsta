@@ -1,6 +1,5 @@
 = appsta
 
-* http://appsta.com
 * http://github.com/ejdraper/appsta
 
 == DESCRIPTION:
